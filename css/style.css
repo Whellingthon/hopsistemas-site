@@ -1,0 +1,296 @@
+ :root {
+           
+            --primary-bg: #050a14; /* Fundo Dark quase preto */
+            --primary-navy: #0a192f; /* Azul Marinho Profundo (Logo) */
+            --accent-cyan: #00d4bd; /* Verde-água/Ciano dos nós do logo */
+            --text-light: #e6f1ff;
+            --text-gray: #8892b0;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body { background-color: var(--primary-bg); color: var(--text-light); overflow-x: hidden; }
+
+        /* --- HEADER --- */
+        header {
+            padding: 22px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 25, 47, 0.96);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 212, 189, 0.1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.6rem; 
+            color: var(--text-light); 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span { color: var(--accent-cyan); }
+        
+        /* Simulação do Logo em Texto */
+        .logo-icon {
+            color: var(--accent-cyan);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .btn-cta {
+            background: transparent;
+            color: var(--accent-cyan);
+            padding: 10px 25px;
+            border: 1px solid var(--accent-cyan);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-cta:hover { 
+            background: rgba(0, 212, 189, 0.1); 
+            box-shadow: 0 0 15px rgba(0, 212, 189, 0.2); 
+        }
+
+        /* --- HERO SECTION --- */
+        /* --- HERO COM VÍDEO BACKGROUND --- */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 140px 20px 50px;
+    background: #050a14; /* Cor de fundo caso o vídeo falhe */
+    overflow: hidden; /* Impede que o vídeo "vaze" da tela */
+}
+
+/* Container que segura os vídeos */
+.video-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Fica no fundo */
+}
+
+/* Estilo de cada vídeo */
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre a tela inteira sem distorcer */
+    opacity: 0; /* Começa invisível */
+    transition: opacity 1.5s ease-in-out; /* Transição suave (Fade) */
+}
+
+/* A classe que deixa o vídeo visível */
+.bg-video.active {
+    opacity: 0.6; /* Ajuste a opacidade (0.6 = 60% visível) para não brigar com o texto */
+}
+
+/* Máscara escura (Gradiente) para garantir leitura do texto */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(5,10,20,0.4) 0%, rgba(5,10,20,1) 100%);
+    z-index: 1; /* Fica em cima do vídeo, mas abaixo do texto */
+}
+
+/* Conteúdo de texto (garante que fique na frente de tudo) */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.btn-hero {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    margin-top: 30px;
+    display: inline-block;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+.btn-hero:hover { border-color: var(--accent-cyan); letter-spacing: 1px; }
+
+        .hero h3 {
+            color: var(--accent-cyan);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3.5rem; margin-bottom: 15px; max-width: 900px; line-height: 1.1; font-weight: 800; }
+        .highlight { color: var(--accent-cyan); }
+        .subtitle { color: var(--text-gray); font-size: 1.2rem; max-width: 600px; margin-bottom: 40px; }
+
+        /* --- ANIMAÇÃO FLOW (Ajustada para HopSistemas) --- */
+        .flow-container {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .flow-svg { width: 100%; height: auto; max-height: 300px; }
+        .path-line { fill: none; stroke: #233554; stroke-width: 2; }
+        
+        /* A linha que corre agora é Ciano */
+        .active-line { 
+            fill: none; 
+            stroke: var(--accent-cyan); 
+            stroke-width: 3; 
+            stroke-dasharray: 20; 
+            stroke-dashoffset: 1000;
+            animation: flowData 3s linear infinite;
+            filter: drop-shadow(0 0 5px var(--accent-cyan));
+        }
+        
+        .icon-box { fill: #112240; stroke: var(--accent-cyan); stroke-width: 2; transition: 0.5s; }
+        .text-svg { fill: var(--text-light); font-family: sans-serif; font-weight: bold; }
+
+        @keyframes flowData { to { stroke-dashoffset: 0; } }
+
+        /* --- SOBRE (Autoridade Acadêmica) --- */
+        .about-section { padding: 100px 10%; background: var(--primary-navy); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        
+        .badge-master {
+            background: rgba(0, 212, 189, 0.1);
+            color: var(--accent-cyan);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .card-exp {
+            background: #112240;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--accent-cyan);
+            transition: 0.3s;
+        }
+        .card-exp:hover { transform: translateX(10px); }
+        
+        /* --- SERVIÇOS --- */
+        .services { padding: 100px 10%; text-align: center; background: var(--primary-bg); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px; }
+        .service-card {
+            background: #112240;
+            padding: 30px;
+            border-radius: 8px;
+            transition: 0.3s;
+            text-align: left;
+            border: 1px solid transparent;
+        }
+        .service-card:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--accent-cyan);
+        }
+        .service-icon { font-size: 2rem; margin-bottom: 20px; color: var(--accent-cyan); }
+
+        /* --- CONTATO / FOOTER --- */
+        .footer-cta {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, var(--primary-bg) 0%, #020c1b 100%);
+            border-top: 1px solid #233554;
+        }
+        
+        .whatsapp-btn-large {
+            background: #25D366;
+            color: white;
+            font-size: 1.2rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: 0.3s;
+        }
+        .whatsapp-btn-large:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+        }/* --- RESPONSIVIDADE AVANÇADA (MOBILE) --- */
+@media (max-width: 768px) {
+    
+    /* Ajuste do Header no Celular */
+    header {
+        padding: 15px 5%;
+        flex-direction: column; /* Logo em cima, botão embaixo */
+        gap: 15px;
+        background: rgba(10, 25, 47, 0.98); /* Fundo mais sólido no mobile */
+    }
+    
+    .logo { font-size: 1.4rem; }
+
+    /* Hero Section (Vídeo e Texto) */
+    .hero {
+        padding-top: 160px; /* Mais espaço pro header duplo */
+        padding-bottom: 60px;
+    }
+
+    h1 {
+        font-size: 2.2rem; /* Fonte menor para não quebrar */
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Ajuste da Animação SVG (Flow) para caber na tela */
+    .flow-container {
+        transform: scale(0.8); /* Diminui um pouco o desenho */
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    /* Grid de Serviços e Projetos (Um por linha) */
+    .about-grid, 
+    .services-grid {
+        grid-template-columns: 1fr; /* Uma coluna só */
+        gap: 30px;
+    }
+
+    /* Ajuste do Vídeo Background no Celular */
+    .bg-video {
+        object-position: center; /* Garante que o centro do vídeo apareça */
+    }
+    
+    /* Botão WhatsApp Grande no Footer */
+    .whatsapp-btn-large {
+        font-size: 1rem;
+        padding: 12px 25px;
+        width: 100%; /* Botão ocupa a largura toda */
+        justify-content: center;
+    }
+}
