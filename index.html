@@ -4,114 +4,553 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HopSistemas | Soluções Digitais e Ciência de Dados</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> 
-    <link rel="icon" href="img/IMG_1950.jpg" type="image/png">
     <meta name="description" content="HopSistemas: Consultoria em Ciência de Dados, Inteligência Artificial e Desenvolvimento Web em Pindamonhangaba. Soluções digitais para elevar seu negócio.">
-<meta name="keywords" content="Ciência de Dados, Desenvolvimento Web, Pindamonhangaba, Consultoria TI, Inteligência Artificial, Criação de Sites, Automação, HopSistemas, Welington Hopka">
-<meta name="author" content="Hop Sistemas">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="HopSistemas | Soluções Digitais e Ciência de Dados">
-<meta property="og:description" content="Transforme dados em lucro. Consultoria especializada em IA, Web e Mobile para o seu negócio.">
-<meta property="og:image" content="link-para-sua-logo-ou-foto.jpg"> <meta property="og:url" content="https://seusite.infinityfreeapp.com">
-<meta property="og:type" content="website">
-<title>HopSistemas | Soluções Digitais e Ciência de Dados</title>
+    <meta name="keywords" content="Ciência de Dados, Desenvolvimento Web, Pindamonhangaba, Consultoria TI, Inteligência Artificial, Criação de Sites, Automação, HopSistemas, Welington Hopka">
+    <meta name="author" content="Hop Sistemas">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="HopSistemas | Soluções Digitais e Ciência de Dados">
+    <meta property="og:description" content="Transforme dados em lucro. Consultoria especializada em IA, Web e Mobile para o seu negócio.">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef7ff',
+                            100: '#d9edff',
+                            200: '#bce0ff',
+                            300: '#8eccff',
+                            400: '#59aeff',
+                            500: '#338bff',
+                            600: '#1b69f5',
+                            700: '#1354e1',
+                            800: '#1644b6',
+                            900: '#183c8f',
+                            950: '#132657',
+                        },
+                        dark: {
+                            50: '#f6f6f9',
+                            100: '#ecedf2',
+                            200: '#d5d7e2',
+                            300: '#b0b4c9',
+                            400: '#868bad',
+                            500: '#676a86',
+                            600: '#52546c',
+                            700: '#434458',
+                            800: '#3b3c4b',
+                            900: '#0d0f1a',
+                            950: '#080a12',
+                        }
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="font-inter">
 
-    <header>
-        <div class="logo">
-            <span class="logo-icon">HOP</span>Sistemas
-        </div>
-        <a href="https://wa.me/55149997669155?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20elevar%20meu%20negócio." class="btn-cta">Consultoria</a>
-    </header>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/55149997669155?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20elevar%20meu%20negócio." 
+       target="_blank"
+       rel="noopener noreferrer"
+       class="whatsapp-float fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-lg shadow-[#25D366]/30 transition-all duration-300 hover:scale-110"
+       aria-label="Contato via WhatsApp">
+        <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
 
-    
-       <section class="hero">
-    
-    <div class="video-carousel">
-        <video class="bg-video active" autoplay muted loop playsinline poster="poster1.jpg">
-            <source src="img/A_complex_digital_202511221928_aopc2.webm" type="video/webm">
-            
-        </video>
-        
-        <video class="bg-video" autoplay muted loop playsinline poster="poster2.jpg">
-            <source src="img/Abstract_data_visualization_202511221928_kfu.webm" type="video/webm">
-            
-        </video>
-        
-        <video class="bg-video" autoplay muted loop playsinline poster="poster3.jpg">
-            <source src="img/Closeup_shot_of_202511221930_hk0w3.webm" type="video/webm">
-            
-        </video>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 nav-blur bg-dark-950/70 border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="relative w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center font-black text-white text-sm tracking-tight transition-all duration-300 group-hover:bg-brand-500 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-brand-600/30">
+                        H
+                        <div class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-brand-400 rounded-full pulse-ring"></div>
+                    </div>
+                    <div>
+                        <span class="text-white font-bold text-lg tracking-tight">Hop</span><span class="text-brand-400 font-bold text-lg tracking-tight">Sistemas</span>
+                    </div>
+                </a>
 
-        <div class="video-overlay"></div>
-    </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#sobre" class="nav-link text-dark-300 hover:text-white text-sm font-medium transition-colors">Sobre</a>
+                    <a href="#servicos" class="nav-link text-dark-300 hover:text-white text-sm font-medium transition-colors">Serviços</a>
+                    <a href="#resultados" class="nav-link text-dark-300 hover:text-white text-sm font-medium transition-colors">Resultados</a>
+                    <a href="#contato" class="nav-link text-dark-300 hover:text-white text-sm font-medium transition-colors">Contato</a>
+                </div>
 
-    <div class="hero-content">
-        <h3>Soluções Digitais para ELEVAR seu Negócio</h3>
-        <h1>Transformo Dados em <br><span class="highlight">Inteligência Estratégica</span></h1>
-        <p class="subtitle">Desenvolvimento de software de alta performance, aplicativos sob medida e análise de dados para escalar o seu faturamento.</p>
-        
-        <a href="#sobre" class="btn-hero">↓ Conheça a Hop Sistemas</a>
-    </div>
-</section>
-
-    <section id="sobre" class="about-section">
-        <div class="about-grid">
-            <div>
-                <span class="badge-master">Engenharia de Software & Dados</span>
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2;">Soluções testadas no <br><span class="highlight">Mercado Corporativo</span></h2>
-                <p style="color: var(--text-gray); line-height: 1.6; margin-bottom: 20px;">
-                    A Hop Sistemas traz para o seu negócio a mesma expertise utilizada em gigantes como <strong>Nestlé, Claro e Atacadão</strong>. 
-                </p>
-                <p style="color: var(--text-gray); line-height: 1.6;">
-                    Nossa missão é entregar plataformas web, aplicativos e sistemas de automação altamente eficientes. Com forte base em Engenharia de Software e especialização em <strong>Data Science e Machine Learning</strong>, não entregamos apenas código: entregamos infraestrutura robusta, segurança e resultados escaláveis.
-                </p>
-            </div>
-    </section>
-
-    <section class="services">
-        <h2 style="margin-bottom: 10px;">Serviços HopSistemas</h2>
-        <p style="color: var(--text-gray);">Soluções personalizadas para elevar seu faturamento</p>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🌐</div>
-                <h3>Sites & E-commerce</h3>
-                <p style="color: var(--text-gray);">Desenvolvimento de vitrines virtuais modernas para captar clientes 24h por dia.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📈</div>
-                <h3>Ciência de Dados</h3>
-                <p style="color: var(--text-gray);">Análise estatística avançada e dashboards para prever tendências e lucros.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🤖</div>
-                <h3>IA para Negócios</h3>
-                <p style="color: var(--text-gray);">Implementação de automações inteligentes para reduzir custos operacionais.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚙️</div>
-                <h3>Sistemas sob Medida</h3>
-                <p style="color: var(--text-gray);">Desenvolvimento de portais corporativos e integrações de API para otimizar sua operação.</p>
+                <!-- CTA + Mobile Toggle -->
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/55149997669155?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20elevar%20meu%20negócio." 
+                       target="_blank"
+                              rel="noopener"
+                       class="hidden sm:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-brand-600/25 hover:-translate-y-0.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        Consultoria
+                    </a>
+                    <button id="menuToggle" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
             </div>
         </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-y-0 right-0 w-72 z-50 bg-dark-950/95 nav-blur border-l border-white/5 p-6 pt-20">
+        <button id="menuClose" class="absolute top-5 right-5 text-white p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Fechar menu">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="flex flex-col gap-4">
+            <a href="#sobre" class="mobile-nav-link text-dark-300 hover:text-white text-lg font-medium py-2 border-b border-white/5 transition-colors">Sobre</a>
+            <a href="#servicos" class="mobile-nav-link text-dark-300 hover:text-white text-lg font-medium py-2 border-b border-white/5 transition-colors">Serviços</a>
+            <a href="#resultados" class="mobile-nav-link text-dark-300 hover:text-white text-lg font-medium py-2 border-b border-white/5 transition-colors">Resultados</a>
+            <a href="#contato" class="mobile-nav-link text-dark-300 hover:text-white text-lg font-medium py-2 border-b border-white/5 transition-colors">Contato</a>
+            <a href="https://wa.me/55149997669155?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20elevar%20meu%20negócio." 
+               target="_blank"
+                    rel="noopener"
+               class="mt-4 inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-5 py-3 rounded-xl transition-all duration-300">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                Falar no WhatsApp
+            </a>
+        </div>
+    </div>
+    <div id="menuOverlay" class="fixed inset-0 z-40 bg-black/50 hidden"></div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center grid-pattern overflow-hidden bg-dark-950">
+        
+        <!-- Video Background Carousel (Restored) -->
+        <div class="video-carousel absolute inset-0 z-0">
+            <video class="bg-video active" autoplay muted loop playsinline poster="poster1.jpg">
+                <source src="img/A_complex_digital_202511221928_aopc2.webm" type="video/webm">
+            </video>
+            <video class="bg-video" autoplay muted loop playsinline poster="poster2.jpg">
+                <source src="img/Abstract_data_visualization_202511221928_kfu.webm" type="video/webm">
+            </video>
+            <video class="bg-video" autoplay muted loop playsinline poster="poster3.jpg">
+                <source src="img/Closeup_shot_of_202511221930_hk0w3.webm" type="video/webm">
+            </video>
+            <div class="video-overlay absolute inset-0 bg-dark-950/80 z-10"></div>
+        </div>
+
+        <!-- Floating Orbs (Ensure they are above the video with z-20) -->
+        <div class="orb orb-1 w-[500px] h-[500px] bg-brand-600 top-[-10%] left-[-10%] z-20"></div>
+        <div class="orb orb-2 w-[400px] h-[400px] bg-brand-400 bottom-[-5%] right-[-5%] z-20"></div>
+        <div class="orb orb-3 w-[300px] h-[300px] bg-purple-600 top-[40%] right-[20%] z-20"></div>
+        <!-- Particles Container -->
+        <div id="particles" class="absolute inset-0 pointer-events-none"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center">
+            <!-- Badge -->
+            <div class="fade-up inline-flex items-center gap-2 bg-brand-600/10 border border-brand-600/20 text-brand-400 text-sm font-medium px-4 py-2 rounded-full mb-8 badge-shimmer">
+                <span class="w-2 h-2 bg-brand-400 rounded-full animate-pulse"></span>
+                Engenharia de Software & Dados
+            </div>
+
+            <!-- Headline -->
+            <h1 class="fade-up delay-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-6 tracking-tight">
+                Transformo Dados em<br>
+                <span class="gradient-text">Inteligência Estratégica</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="fade-up delay-200 text-dark-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Desenvolvimento de software de alta performance, aplicativos sob medida e análise de dados para 
+                <span class="text-white font-semibold">escalar o seu faturamento</span>.
+            </p>
+
+            <!-- CTAs -->
+            <div class="fade-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#servicos" class="group inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-brand-600/25 hover:-translate-y-0.5">
+                    Conheça Nossos Serviços
+                    <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+                </a>
+                <a href="#sobre" class="group inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5">
+                    <i data-lucide="play" class="w-5 h-5"></i>
+                    Sobre a Hop Sistemas
+                </a>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="fade-up delay-400 mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-black text-white" data-count="10">0+</div>
+                    <div class="text-dark-500 text-sm mt-1">Anos de Experiência</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-black text-white" data-count="50">0+</div>
+                    <div class="text-dark-500 text-sm mt-1">Projetos Entregues</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-black text-white" data-count="3">0</div>
+                    <div class="text-dark-500 text-sm mt-1">Grandes Clientes</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-black text-white" data-count="100">0%</div>
+                    <div class="text-dark-500 text-sm mt-1">Foco em Resultados</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+            <span class="text-dark-500 text-xs uppercase tracking-widest">Scroll</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-dark-500"></i>
+        </div>
     </section>
 
-    <footer class="footer-cta">
-        <h2 style="margin-bottom: 30px;">Pronto para elevar seu negócio?</h2>
-        <p style="color: var(--text-gray); margin-bottom: 40px;">Entre em contato direto comigo pelo WhatsApp.</p>
-        
-        <a href="https://wa.me/55149997669155?text=Olá,%20gostaria%20de%20um%20orçamento%20da%20HopSistemas." class="whatsapp-btn-large">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            Falar no WhatsApp (14) 99766-9155
-        </a>
-        <br><br>
-        <p style="font-size: 0.8rem; opacity: 0.5">HopSistemas © 2025 - Pindamonhangaba/SP</p>
+    <!-- About Section -->
+    <section id="sobre" class="relative py-24 md:py-32 overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-600/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Left: Image + Visual -->
+                <div class="fade-up relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-white/5">
+                        <img src="http://static.photos/technology/640x360/42" alt="Tecnologia e Inovação" class="w-full h-80 md:h-[420px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/30 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="flex items-center gap-3 bg-dark-950/80 nav-blur rounded-xl p-4 border border-white/10">
+                                <div class="w-10 h-10 bg-brand-600/20 rounded-lg flex items-center justify-center">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-brand-400"></i>
+                                </div>
+                                <div>
+                                    <div class="text-white text-sm font-semibold">Certificado & Confiável</div>
+                                    <div class="text-dark-400 text-xs">Engenharia de Software Aplicada</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative -->
+                    <div class="absolute -top-4 -left-4 w-20 h-20 border border-brand-600/20 rounded-xl"></div>
+                    <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-brand-600/10 rounded-xl"></div>
+                </div>
+
+                <!-- Right: Content -->
+                <div>
+                    <div class="fade-up">
+                        <span class="inline-flex items-center gap-2 text-brand-400 text-sm font-semibold uppercase tracking-wider mb-4">
+                            <span class="w-8 h-px bg-brand-600"></span>
+                            Sobre Nós
+                        </span>
+                    </div>
+                    <h2 class="fade-up delay-100 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                        Soluções testadas no<br>
+                        <span class="gradient-text">Mercado Corporativo</span>
+                    </h2>
+                    <p class="fade-up delay-200 text-dark-400 text-lg leading-relaxed mb-6">
+                        A Hop Sistemas traz para o seu negócio a mesma expertise utilizada em gigantes como 
+                        <strong class="text-white">Nestlé</strong>, <strong class="text-white">Claro</strong> e <strong class="text-white">Atacadão</strong>.
+                    </p>
+                    <p class="fade-up delay-300 text-dark-400 leading-relaxed mb-8">
+                        Nossa missão é entregar plataformas web, aplicativos e sistemas de automação altamente eficientes. 
+                        Com forte base em Engenharia de Software e especialização em 
+                        <strong class="text-white">Data Science e Machine Learning</strong>, 
+                        não entregamos apenas código: entregamos infraestrutura robusta, segurança e resultados escaláveis.
+                    </p>
+
+                    <!-- Feature pills -->
+                    <div class="fade-up delay-400 flex flex-wrap gap-3 mb-8">
+                        <span class="inline-flex items-center gap-2 bg-brand-600/10 border border-brand-600/20 text-brand-400 text-sm px-4 py-2 rounded-lg">
+                            <i data-lucide="code-2" class="w-4 h-4"></i> Full-Stack
+                        </span>
+                        <span class="inline-flex items-center gap-2 bg-brand-600/10 border border-brand-600/20 text-brand-400 text-sm px-4 py-2 rounded-lg">
+                            <i data-lucide="brain" class="w-4 h-4"></i> Machine Learning
+                        </span>
+                        <span class="inline-flex items-center gap-2 bg-brand-600/10 border border-brand-600/20 text-brand-400 text-sm px-4 py-2 rounded-lg">
+                            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Data Science
+                        </span>
+                        <span class="inline-flex items-center gap-2 bg-brand-600/10 border border-brand-600/20 text-brand-400 text-sm px-4 py-2 rounded-lg">
+                            <i data-lucide="cloud" class="w-4 h-4"></i> Cloud
+                        </span>
+                    </div>
+
+                          <a href="https://wa.me/55149997669155?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20HopSistemas." 
+                              target="_blank"
+                              rel="noopener"
+                       class="fade-up delay-500 group inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-semibold transition-colors">
+                        Fale comigo agora
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="relative py-24 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-brand-950/10 to-dark-950"></div>
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-600/20 to-transparent"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="fade-up inline-flex items-center gap-2 text-brand-400 text-sm font-semibold uppercase tracking-wider mb-4">
+                    <span class="w-8 h-px bg-brand-600"></span>
+                    Serviços
+                    <span class="w-8 h-px bg-brand-600"></span>
+                </span>
+                <h2 class="fade-up delay-100 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                    Soluções que <span class="gradient-text">Elevam</span> seu Faturamento
+                </h2>
+                <p class="fade-up delay-200 text-dark-400 text-lg">
+                    Personalizadas para cada etapa do seu crescimento digital
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="fade-up delay-100 card-glow bg-dark-900/50 border border-white/5 rounded-2xl p-6 lg:p-8">
+                    <div class="w-14 h-14 bg-brand-600/15 rounded-xl flex items-center justify-center mb-6 transition-colors group-hover:bg-brand-600/25">
+                        <i data-lucide="globe" class="w-7 h-7 text-brand-400"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-3">Sites & E-commerce</h3>
+                    <p class="text-dark-400 text-sm leading-relaxed mb-5">
+                        Desenvolvimento de vitrines virtuais modernas para captar clientes 24h por dia.
+                    </p>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" data-width="90"></div>
+                    </div>
+                    <span class="text-dark-500 text-xs mt-2 block">Conversão otimizada</span>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="fade-up delay-200 card-glow bg-dark-900/50 border border-white/5 rounded-2xl p-6 lg:p-8">
+                    <div class="w-14 h-14 bg-brand-600/15 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="trending-up" class="w-7 h-7 text-brand-400"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-3">Ciência de Dados</h3>
+                    <p class="text-dark-400 text-sm leading-relaxed mb-5">
+                        Análise estatística avançada e dashboards para prever tendências e lucros.
+                    </p>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" data-width="95"></div>
+                    </div>
+                    <span class="text-dark-500 text-xs mt-2 block">Precisão nos insights</span>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="fade-up delay-300 card-glow bg-dark-900/50 border border-white/5 rounded-2xl p-6 lg:p-8">
+                    <div class="w-14 h-14 bg-brand-600/15 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="bot" class="w-7 h-7 text-brand-400"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-3">IA para Negócios</h3>
+                    <p class="text-dark-400 text-sm leading-relaxed mb-5">
+                        Implementação de automações inteligentes para reduzir custos operacionais.
+                    </p>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" data-width="85"></div>
+                    </div>
+                    <span class="text-dark-500 text-xs mt-2 block">Automação inteligente</span>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="fade-up delay-400 card-glow bg-dark-900/50 border border-white/5 rounded-2xl p-6 lg:p-8">
+                    <div class="w-14 h-14 bg-brand-600/15 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="settings" class="w-7 h-7 text-brand-400"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-3">Sistemas sob Medida</h3>
+                    <p class="text-dark-400 text-sm leading-relaxed mb-5">
+                        Desenvolvimento de portais corporativos e integrações de API para otimizar sua operação.
+                    </p>
+                    <div class="stat-bar">
+                        <div class="stat-bar-fill" data-width="92"></div>
+                    </div>
+                    <span class="text-dark-500 text-xs mt-2 block">Performance garantida</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results / Process Section -->
+    <section id="resultados" class="relative py-24 md:py-32 overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-600/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Left: Content -->
+                <div>
+                    <span class="fade-up inline-flex items-center gap-2 text-brand-400 text-sm font-semibold uppercase tracking-wider mb-4">
+                        <span class="w-8 h-px bg-brand-600"></span>
+                        Como Trabalhamos
+                    </span>
+                    <h2 class="fade-up delay-100 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-10">
+                        Do Dado ao <span class="gradient-text">Resultado</span>
+                    </h2>
+
+                    <!-- Steps -->
+                    <div class="space-y-8">
+                        <div class="fade-up delay-200 flex gap-5">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">1</div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg mb-1">Diagnóstico</h3>
+                                <p class="text-dark-400 text-sm leading-relaxed">Análise completa do seu negócio, processos e oportunidades de melhoria com foco em ROI.</p>
+                            </div>
+                        </div>
+                        <div class="fade-up delay-300 flex gap-5">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-600/80 rounded-xl flex items-center justify-center text-white font-bold text-lg">2</div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg mb-1">Estratégia & Arquitetura</h3>
+                                <p class="text-dark-400 text-sm leading-relaxed">Desenho da solução ideal com as tecnologias mais adequadas para sua necessidade.</p>
+                            </div>
+                        </div>
+                        <div class="fade-up delay-400 flex gap-5">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-600/60 rounded-xl flex items-center justify-center text-white font-bold text-lg">3</div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg mb-1">Desenvolvimento & Deploy</h3>
+                                <p class="text-dark-400 text-sm leading-relaxed">Execução ágil com entregas incrementais, testes automatizados e infraestrutura escalável.</p>
+                            </div>
+                        </div>
+                        <div class="fade-up delay-500 flex gap-5">
+                            <div class="flex-shrink-0 w-12 h-12 bg-brand-600/40 rounded-xl flex items-center justify-center text-white font-bold text-lg">4</div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg mb-1">Evolução Contínua</h3>
+                                <p class="text-dark-400 text-sm leading-relaxed">Monitoramento, otimização e novas funcionalidades para manter sua vantagem competitiva.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Visual -->
+                <div class="fade-up delay-200 relative">
+                    <div class="relative bg-dark-900/50 border border-white/5 rounded-2xl p-6 md:p-8">
+                        <!-- Mock dashboard -->
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+                            <span class="text-dark-500 text-xs ml-2">dashboard.hopsistemas.com</span>
+                        </div>
+                        <img src="http://static.photos/abstract/640x360/99" alt="Dashboard Analytics" class="w-full rounded-xl mb-6 border border-white/5">
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="bg-dark-950/50 rounded-xl p-4 border border-white/5 text-center">
+                                <div class="text-brand-400 text-2xl font-bold">↑ 34%</div>
+                                <div class="text-dark-500 text-xs mt-1">Conversão</div>
+                            </div>
+                            <div class="bg-dark-950/50 rounded-xl p-4 border border-white/5 text-center">
+                                <div class="text-green-400 text-2xl font-bold">↑ 2.1x</div>
+                                <div class="text-dark-500 text-xs mt-1">Faturamento</div>
+                            </div>
+                            <div class="bg-dark-950/50 rounded-xl p-4 border border-white/5 text-center">
+                                <div class="text-purple-400 text-2xl font-bold">↓ 47%</div>
+                                <div class="text-dark-500 text-xs mt-1">Custos</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative -->
+                    <div class="absolute -top-3 -right-3 w-24 h-24 border border-brand-600/10 rounded-2xl -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial / Trust Section -->
+    <section class="relative py-16 overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-600/20 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-up bg-gradient-to-r from-brand-900/30 via-brand-950/20 to-brand-900/30 border border-brand-600/10 rounded-2xl p-8 md:p-12 text-center">
+                <i data-lucide="quote" class="w-10 h-10 text-brand-600/40 mx-auto mb-4"></i>
+                <blockquote class="text-xl md:text-2xl text-white font-medium leading-relaxed max-w-3xl mx-auto mb-6">
+                    "A HopSistemas transformou nossa operação com automação inteligente. Resultados reais em tempo recorde."
+                </blockquote>
+                <div class="flex items-center justify-center gap-3">
+                    <div class="w-10 h-10 bg-brand-600/20 rounded-full flex items-center justify-center">
+                        <i data-lucide="building-2" class="w-5 h-5 text-brand-400"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-white text-sm font-semibold">Cliente Corporativo</div>
+                        <div class="text-dark-500 text-xs">Setor Industrial</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact Section -->
+    <section id="contato" class="relative py-24 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 grid-pattern"></div>
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-600/20 to-transparent"></div>
+        <div class="orb w-[400px] h-[400px] bg-brand-600 top-[20%] left-[-10%]"></div>
+        <div class="orb w-[300px] h-[300px] bg-purple-600 bottom-[10%] right-[-5%]" style="animation-delay: -4s;"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="fade-up inline-flex items-center gap-2 text-brand-400 text-sm font-semibold uppercase tracking-wider mb-4">
+                <span class="w-8 h-px bg-brand-600"></span>
+                Vamos Conversar
+                <span class="w-8 h-px bg-brand-600"></span>
+            </span>
+            <h2 class="fade-up delay-100 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                Pronto para <span class="gradient-text">Elevar</span> seu Negócio?
+            </h2>
+            <p class="fade-up delay-200 text-dark-400 text-lg leading-relaxed mb-10">
+                Entre em contato direto comigo pelo WhatsApp e vamos transformar seus dados em resultados.
+            </p>
+
+                <a href="https://wa.me/55149997669155?text=Olá,%20gostaria%20de%20um%20orçamento%20da%20HopSistemas." 
+                    target="_blank"
+                    rel="noopener"
+               class="fade-up delay-300 group inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-lg px-10 py-5 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-[#25D366]/25 hover:-translate-y-1">
+                <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                Falar no WhatsApp (14) 99766-9155
+                <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+            </a>
+
+            <div class="fade-up delay-400 mt-8 flex items-center justify-center gap-6 text-dark-500 text-sm">
+                <span class="flex items-center gap-2">
+                    <i data-lucide="clock" class="w-4 h-4"></i> Resposta rápida
+                </span>
+                <span class="w-1 h-1 bg-dark-600 rounded-full"></span>
+                <span class="flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i> Pindamonhangaba/SP
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative border-t border-white/5 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center font-black text-white text-xs">H</div>
+                    <span class="text-white font-bold">Hop</span><span class="text-brand-400 font-bold">Sistemas</span>
+                </div>
+
+                <!-- Links -->
+                <div class="flex items-center gap-6">
+                    <a href="#sobre" class="text-dark-400 hover:text-white text-sm transition-colors">Sobre</a>
+                    <a href="#servicos" class="text-dark-400 hover:text-white text-sm transition-colors">Serviços</a>
+                    <a href="#contato" class="text-dark-400 hover:text-white text-sm transition-colors">Contato</a>
+                </div>
+
+                <!-- Copyright -->
+                <p class="text-dark-600 text-sm">HopSistemas © 2025 — Pindamonhangaba/SP</p>
+            </div>
+        </div>
     </footer>
-<script src="js/main.js"></script>  
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+<script src="js/main.js"></script>
+    
 </body>
-
-
 </html>
